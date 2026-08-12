@@ -9,8 +9,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #0d0d0d; /* fundo escuro sofisticado */
-      color: #f0f0f0;
+      background: #1a1a1e; /* cinza escuro sofisticado */
+      color: #e8e8e8;
       line-height: 1.6;
     }
     .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
@@ -22,10 +22,10 @@
       --rosa: #F06292;
       --magenta: #D81B60;
       --preto: #000000;
-      --cinza: #aaaaaa;
+      --cinza: #b0b0b0;
       --branco: #ffffff;
-      --cinza-claro: #2a2a2a;
-      --sombra: 0 12px 40px rgba(0,0,0,0.6);
+      --cinza-claro: #2c2c30;
+      --sombra: 0 12px 40px rgba(0,0,0,0.5);
     }
 
     /* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
@@ -63,7 +63,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.5) 100%);
       pointer-events: none;
     }
 
@@ -71,7 +71,7 @@
     .apresentacao {
       padding: 60px 0 50px;
       text-align: center;
-      background: #121212;
+      background: #222226;
       border-top: 1px solid rgba(255,255,255,0.04);
     }
     .apresentacao h1 {
@@ -112,7 +112,7 @@
     /* ===== SERVIÇOS ===== */
     .servicos {
       padding: 80px 0;
-      background: #1a1a1a;
+      background: #1e1e22;
     }
     .servicos .section-title {
       text-align: center;
@@ -134,7 +134,7 @@
       gap: 18px;
     }
     .servico-item {
-      background: #2a2a2a;
+      background: var(--cinza-claro);
       padding: 24px 12px;
       border-radius: 14px;
       text-align: center;
@@ -143,7 +143,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     .servico-item:hover {
-      background: #333;
+      background: #3a3a3e;
       box-shadow: 0 8px 28px rgba(0,0,0,0.4);
       border-bottom-color: var(--magenta);
       transform: translateY(-4px);
@@ -157,7 +157,7 @@
     /* ===== CONTATO / MAPA ===== */
     .contato {
       padding: 80px 0;
-      background: #121212;
+      background: #222226;
     }
     .contato .section-title {
       text-align: center;
@@ -212,7 +212,7 @@
     /* ===== REDES SOCIAIS ===== */
     .redes {
       padding: 60px 0;
-      background: #1a1a1a;
+      background: #1e1e22;
       text-align: center;
     }
     .redes h3 {
@@ -241,7 +241,7 @@
       border-radius: 50%;
       text-decoration: none;
       transition: transform 0.3s, box-shadow 0.3s;
-      background: #2a2a2a;
+      background: var(--cinza-claro);
       border: 1.5px solid #444;
     }
     .redes-links a:hover {
@@ -258,19 +258,18 @@
     .redes-links .fb svg { fill: none; stroke: #1877F2; stroke-width: 1.8; }
     .redes-links .yt svg { fill: none; stroke: #FF0000; stroke-width: 1.8; }
     .redes-links .tt svg { fill: none; stroke: #010101; stroke-width: 1.8; }
-    .redes-links .tw svg { fill: none; stroke: #1DA1F2; stroke-width: 1.8; }
 
+    /* Hover */
     .redes-links .ig:hover { border-color: #E4405F; background: rgba(228,64,95,0.15); }
     .redes-links .fb:hover { border-color: #1877F2; background: rgba(24,119,242,0.15); }
     .redes-links .yt:hover { border-color: #FF0000; background: rgba(255,0,0,0.15); }
     .redes-links .tt:hover { border-color: #010101; background: rgba(0,0,0,0.2); }
-    .redes-links .tw:hover { border-color: #1DA1F2; background: rgba(29,161,242,0.15); }
 
     /* ===== PROJETO SOCIAL ===== */
     .projeto-social {
       text-align: center;
       padding: 48px 0 56px;
-      background: #121212;
+      background: #222226;
     }
     .projeto-social .btn-social {
       background: transparent;
@@ -292,7 +291,7 @@
 
     /* ===== RODAPÉ ===== */
     footer {
-      background: #0d0d0d;
+      background: #141418;
       color: #666;
       text-align: center;
       padding: 32px 0;
@@ -329,7 +328,7 @@
 </head>
 <body>
 
-  <!-- ===== BOTÃO FLUTUANTE WHATSAPP (target _blank) ===== -->
+  <!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
   <a href="https://wa.me/5567992711702?text=Olá%2C%20gostaria%20de%20mais%20informações%20sobre%20os%20serviços." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24">
       <path d="M12.032 21.964c-1.886 0-3.742-0.497-5.35-1.438l-0.072-0.042-4.54 1.488 1.488-4.426-0.046-0.074c-1.004-1.668-1.536-3.58-1.536-5.552 0-5.928 4.822-10.75 10.75-10.75s10.75 4.822 10.75 10.75-4.822 10.75-10.75 10.75zM12.032 3.214c-4.662 0-8.45 3.788-8.45 8.45 0 1.678 0.496 3.31 1.436 4.682l0.052 0.076-0.944 2.81 2.9-0.948 0.078 0.048c1.33 0.828 2.91 1.272 4.586 1.272 4.662 0 8.45-3.788 8.45-8.45s-3.788-8.45-8.45-8.45zM15.054 13.722c-0.188-0.094-1.114-0.55-1.286-0.612s-0.298-0.094-0.424 0.094-0.488 0.612-0.598 0.738c-0.11 0.126-0.22 0.142-0.408 0.048-0.188-0.094-0.794-0.292-1.512-0.932-0.558-0.496-0.936-1.11-1.046-1.298-0.11-0.188-0.012-0.29 0.082-0.384 0.084-0.084 0.188-0.22 0.282-0.33 0.094-0.11 0.126-0.188 0.188-0.314 0.062-0.126 0.032-0.236-0.016-0.33-0.048-0.094-0.424-1.02-0.58-1.396-0.152-0.366-0.306-0.316-0.424-0.322-0.11-0.006-0.236-0.008-0.362-0.008s-0.33 0.048-0.502 0.236c-0.172 0.188-0.656 0.642-0.656 1.566s0.672 1.816 0.766 1.942c0.094 0.126 1.322 2.016 3.202 2.826 0.448 0.192 0.798 0.306 1.072 0.392 0.45 0.144 0.858 0.124 1.182 0.076 0.36-0.054 1.114-0.456 1.27-0.896 0.156-0.44 0.156-0.816 0.11-0.894-0.046-0.078-0.17-0.126-0.358-0.22z"/>
@@ -416,16 +415,10 @@
             <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
           </svg>
         </a>
-        <!-- TikTok -->
+        <!-- TikTok (ícone corrigido) -->
         <a href="https://tiktok.com/@wendywafay" target="_blank" class="tt" aria-label="TikTok">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2v10.5M12 12.5a2.5 2.5 0 1 0 0-5M12 12.5a2.5 2.5 0 1 0 0 5M10 7.5a4 4 0 0 1 4 4v4M10 7.5a4 4 0 0 0-4 4v4" />
-          </svg>
-        </a>
-        <!-- Twitter -->
-        <a href="https://twitter.com/wendywafay" target="_blank" class="tw" aria-label="Twitter">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
           </svg>
         </a>
       </div>
