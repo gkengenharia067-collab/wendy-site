@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendamento – Wendy Wafay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f0ec;
+      color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 24px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #000;
+    }
+    .subtitle {
+      color: #757575;
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+      font-size: 0.9rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #e0d6d0;
+      border-radius: 12px;
+      font-size: 1rem;
+      background: #faf6f4;
+      transition: border 0.2s;
+      margin-bottom: 18px;
+      font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #D81B60;
+    }
+    .btn-enviar {
+      width: 100%;
+      background: linear-gradient(135deg, #D81B60, #F06292);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-enviar:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(216,27,96,0.35);
+    }
+    .mensagem {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+    .mensagem.sucesso { color: #2e7d32; display: block; }
+    .mensagem.erro { color: #c62828; display: block; }
+    .voltar {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #757575;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .voltar:hover { color: #D81B60; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Agendar Horário</h1>
+    <p class="subtitle">Preencha os dados e escolha o serviço</p>
+
+    <form id="formAgendamento">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" placeholder="Seu nome" required />
+
+      <label for="telefone">Telefone (WhatsApp)</label>
+      <input type="tel" id="telefone" placeholder="(67) 99999-9999" required />
+
+      <label for="servico">Serviço desejado</label>
+      <select id="servico" required>
+        <option value="">Selecione</option>
+        <option value="Manicure">Manicure</option>
+        <option value="Pedicure">Pedicure</option>
+        <option value="Alongamento de Unhas">Alongamento de Unhas</option>
+        <option value="Alongamento de Cílios">Alongamento de Cílios</option>
+        <option value="Corte Feminino">Corte Feminino</option>
+        <option value="Corte Masculino">Corte Masculino</option>
+        <option value="Escova">Escova</option>
+        <option value="Hidratação Capilar">Hidratação Capilar</option>
+        <option value="Sobrancelha">Sobrancelha</option>
+        <option value="Depilação">Depilação</option>
+        <option value="Luzes">Luzes</option>
+        <option value="Mechas">Mechas</option>
+      </select>
+
+      <label for="data">Data</label>
+      <input type="date" id="data" required />
+
+      <label for="horario">Horário</label>
+      <input type="time" id="horario" required />
+
+      <label for="observacao">Observações (opcional)</label>
+      <textarea id="observacao" rows="3" placeholder="Alguma informação extra..."></textarea>
+
+      <button type="submit" class="btn-enviar">Solicitar Agendamento</button>
+      <div id="mensagem" class="mensagem"></div>
+    </form>
+
+    <a href="index.html" class="voltar">← Voltar para o site</a>
+  </div>
+
+  <script>
+    // ===== Configuração do Supabase =====
+    const SUPABASE_URL = 'https://zpeuuiougsawrlrzbcay.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpwZXV1aW91Z3Nhd3JscnpiY2F5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY1NjQxNjAsImV4cCI6MjEwMjE0MDE2MH0.XWRouFlbJHeOsyJqrWqkxXaPJx4d__4SCdzWWBEYDEE';
+
+    document.getElementById('formAgendamento').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const servico = document.getElementById('servico').value;
+      const data = document.getElementById('data').value;
+      const horario = document.getElementById('horario').value;
+      const observacao = document.getElementById('observacao').value.trim();
+
+      const mensagemDiv = document.getElementById('mensagem');
+      mensagemDiv.className = 'mensagem';
+      mensagemDiv.style.display = 'none';
+
+      // Validações simples
+      if (!nome || !telefone || !servico || !data || !horario) {
+        mensagemDiv.textContent = 'Preencha todos os campos obrigatórios.';
+        mensagemDiv.className = 'mensagem erro';
+        mensagemDiv.style.display = 'block';
+        return;
+      }
+
+      // Monta o objeto para enviar
+      const payload = {
+        nome_cliente: nome,
+        telefone: telefone,
+        servico: servico,
+        data: data,
+        horario: horario,
+        observacao: observacao || null,
+        status: 'pendente'
+      };
+
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/agendamentos`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Erro ao salvar: ${response.status} - ${errorText}`);
+        }
+
+        mensagemDiv.textContent = '✅ Agendamento solicitado com sucesso! Entraremos em contato em breve.';
+        mensagemDiv.className = 'mensagem sucesso';
+        mensagemDiv.style.display = 'block';
+        document.getElementById('formAgendamento').reset();
+
+      } catch (error) {
+        console.error('Erro detalhado:', error);
+        mensagemDiv.textContent = `❌ Erro ao enviar: ${error.message}`;
+        mensagemDiv.className = 'mensagem erro';
+        mensagemDiv.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
