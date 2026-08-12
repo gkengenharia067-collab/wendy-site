@@ -48,47 +48,38 @@
     .whatsapp-float:hover { transform: scale(1.08); }
     .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
 
-    /* ===== CAPA ===== */
+    /* ===== CAPA COM OVERLAY FUMÊ ===== */
     .capa {
       height: 100vh;
       background: url('wendy.png') no-repeat center center / cover;
       background-attachment: fixed;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 60px;
+      position: relative;
     }
-    .capa .btn-agendar-capa {
-      display: inline-block;
-      padding: 16px 48px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: white;
-      background: linear-gradient(135deg, var(--magenta) 0%, var(--rosa) 100%);
-      box-shadow: 0 6px 24px rgba(216,27,96,0.4);
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-    .capa .btn-agendar-capa:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 32px rgba(216,27,96,0.6);
-      background: linear-gradient(135deg, var(--laranja) 0%, var(--magenta) 100%);
+    .capa::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.25) 100%);
+      pointer-events: none;
     }
 
-    /* ===== SEÇÃO DE APRESENTAÇÃO (ABAIXO DA CAPA) ===== */
+    /* ===== SEÇÃO DE APRESENTAÇÃO (com contraste) ===== */
     .apresentacao {
-      padding: 60px 0 40px;
+      padding: 60px 0 50px;
       text-align: center;
-      background: white;
+      background: #f5f2ef; /* fundo levemente diferente para separar da foto */
+      border-top: 1px solid rgba(0,0,0,0.05);
     }
     .apresentacao h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 3.2rem;
       color: var(--preto);
       margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
     .apresentacao .slogan {
       font-size: 1.2rem;
@@ -99,26 +90,28 @@
     }
     .apresentacao .btn-agendar {
       display: inline-block;
-      padding: 16px 48px;
+      padding: 16px 56px;
       border-radius: 60px;
       font-weight: 600;
       font-size: 1.1rem;
       text-decoration: none;
       color: white;
       background: linear-gradient(135deg, var(--magenta) 0%, var(--rosa) 100%);
-      box-shadow: 0 6px 24px rgba(216,27,96,0.4);
+      box-shadow: 0 6px 24px rgba(216,27,96,0.35);
       transition: all 0.3s;
+      border: none;
+      cursor: pointer;
     }
     .apresentacao .btn-agendar:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 32px rgba(216,27,96,0.6);
+      transform: scale(1.04);
+      box-shadow: 0 8px 32px rgba(216,27,96,0.5);
       background: linear-gradient(135deg, var(--laranja) 0%, var(--magenta) 100%);
     }
 
     /* ===== SERVIÇOS ===== */
     .servicos {
       padding: 80px 0;
-      background: var(--cinza-claro);
+      background: white;
     }
     .servicos .section-title {
       text-align: center;
@@ -140,7 +133,7 @@
       gap: 18px;
     }
     .servico-item {
-      background: white;
+      background: var(--cinza-claro);
       padding: 24px 12px;
       border-radius: 14px;
       text-align: center;
@@ -163,7 +156,7 @@
     /* ===== CONTATO / MAPA ===== */
     .contato {
       padding: 80px 0;
-      background: white;
+      background: var(--cinza-claro);
     }
     .contato .section-title {
       text-align: center;
@@ -218,7 +211,7 @@
     /* ===== REDES SOCIAIS ===== */
     .redes {
       padding: 60px 0;
-      background: var(--cinza-claro);
+      background: white;
       text-align: center;
     }
     .redes h3 {
@@ -239,7 +232,7 @@
       gap: 16px;
     }
     .redes-links a {
-      background: white;
+      background: var(--cinza-claro);
       padding: 12px 30px;
       border-radius: 50px;
       text-decoration: none;
@@ -247,7 +240,7 @@
       font-size: 0.95rem;
       color: var(--preto);
       transition: all 0.3s;
-      border: 1px solid #eaeaea;
+      border: 1px solid transparent;
     }
     .redes-links a:hover {
       background: var(--magenta);
@@ -260,7 +253,7 @@
     .projeto-social {
       text-align: center;
       padding: 48px 0 56px;
-      background: white;
+      background: var(--cinza-claro);
     }
     .projeto-social .btn-social {
       background: transparent;
@@ -303,7 +296,7 @@
 
     /* ===== RESPONSIVO ===== */
     @media (max-width: 768px) {
-      .capa { height: 70vh; padding-bottom: 30px; }
+      .capa { height: 70vh; }
       .apresentacao h1 { font-size: 2.4rem; }
       .servicos-grid { grid-template-columns: repeat(2, 1fr); }
       .whatsapp-float { width: 52px; height: 52px; bottom: 20px; right: 20px; }
@@ -326,10 +319,8 @@
     </svg>
   </a>
 
-  <!-- ===== CAPA (imagem pura) ===== -->
-  <section class="capa">
-    <a href="/agendamento" class="btn-agendar-capa">Agendar Horário</a>
-  </section>
+  <!-- ===== CAPA (imagem pura com overlay fumê) ===== -->
+  <section class="capa"></section>
 
   <!-- ===== APRESENTAÇÃO (abaixo da capa) ===== -->
   <section class="apresentacao">
