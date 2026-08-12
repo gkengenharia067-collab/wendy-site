@@ -4,443 +4,186 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wendy Wafay – GLAMOUR Y STYLO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ===== RESET ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ===== CORES DA MARCA ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fcf9f7; color: #1a1a1a; line-height: 1.6; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
     :root {
-      --laranja: #F7931E;
-      --amarelo: #FFD54F;
-      --rosa: #F06292;
-      --magenta: #D81B60;
-      --preto: #000000;
-      --cinza: #757575;
-      --branco: #ffffff;
-      --cinza-claro: #f5f5f5;
+      --laranja: #F7931E; --amarelo: #FFD54F; --rosa: #F06292;
+      --magenta: #D81B60; --preto: #000000; --cinza: #757575;
+      --branco: #ffffff; --cinza-claro: #f5f2ef;
+      --sombra: 0 12px 40px rgba(0,0,0,0.06);
     }
-
-    /* ===== HEADER ===== */
-    header {
-      background: var(--branco);
-      padding: 18px 0;
-      border-bottom: 2px solid var(--laranja);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px;
+      background: #25D366; color: white; width: 60px; height: 60px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35); z-index: 999;
+      text-decoration: none; transition: transform 0.3s;
     }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .logo-area img {
-      height: 70px;
-      width: auto;
-      border-radius: 6px;
-    }
-
-    .logo-area h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: var(--preto);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-
-    .logo-area .subtitle {
-      font-size: 0.9rem;
-      color: var(--cinza);
-      font-weight: 300;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .btn-whatsapp-header {
-      background: var(--magenta);
-      color: var(--branco);
-      padding: 10px 28px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: background 0.3s, transform 0.2s;
-      display: inline-block;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-whatsapp-header:hover {
-      background: #b71550;
-      transform: scale(1.02);
-    }
-
-    /* ===== HERO ===== */
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
     .hero {
-      background: linear-gradient(135deg, #faf3ed 0%, #ffffff 100%);
-      padding: 70px 0 60px;
-      text-align: center;
+      background: linear-gradient(165deg, #faf3ed 0%, #fff 100%);
+      padding: 50px 0 60px; text-align: center;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
     }
-
+    .hero .arte-destaque {
+      max-width: 100%; height: auto; max-height: 300px;
+      border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+      margin-bottom: 24px; transition: transform 0.3s;
+    }
+    .hero .arte-destaque:hover { transform: scale(1.01); }
     .hero h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      color: var(--preto);
-      margin-bottom: 12px;
-      font-weight: 700;
-      line-height: 1.2;
+      font-size: 2.8rem; color: var(--preto); margin-bottom: 12px;
+      font-weight: 700; line-height: 1.2;
     }
-
     .hero .slogan {
-      font-size: 1.2rem;
-      color: var(--cinza);
-      margin-bottom: 32px;
-      font-weight: 300;
+      font-size: 1.2rem; color: var(--cinza); font-weight: 300;
+      max-width: 600px; margin: 0 auto 32px;
     }
-
     .hero .btn-agendar {
-      background: var(--magenta);
-      color: var(--branco);
-      padding: 14px 44px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 500;
-      transition: background 0.3s, transform 0.2s;
-      display: inline-block;
-      border: none;
-      cursor: pointer;
+      background: var(--magenta); color: white;
+      padding: 16px 56px; border-radius: 60px; text-decoration: none;
+      font-size: 1.1rem; font-weight: 600; display: inline-block;
+      box-shadow: 0 4px 16px rgba(216,27,96,0.25);
+      transition: all 0.3s;
     }
-
     .hero .btn-agendar:hover {
-      background: #b71550;
-      transform: scale(1.03);
+      background: #b71550; transform: scale(1.04);
+      box-shadow: 0 6px 24px rgba(216,27,96,0.35);
     }
-
-    /* ===== SERVIÇOS ===== */
-    .servicos {
-      padding: 70px 0;
-      background: var(--branco);
-    }
-
+    .servicos { padding: 80px 0; background: white; }
     .servicos .section-title {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: var(--preto);
-      margin-bottom: 12px;
+      text-align: center; font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; color: var(--preto); margin-bottom: 8px;
     }
-
     .servicos .section-subtitle {
-      text-align: center;
-      color: var(--cinza);
-      font-weight: 300;
-      margin-bottom: 40px;
-      font-size: 1rem;
+      text-align: center; color: var(--cinza); font-weight: 300;
+      font-size: 1.1rem; margin-bottom: 48px;
     }
-
     .servicos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 16px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px;
     }
-
     .servico-item {
-      background: var(--cinza-claro);
-      padding: 20px 12px;
-      border-radius: 10px;
-      text-align: center;
-      transition: all 0.3s;
-      border-bottom: 3px solid transparent;
+      background: var(--cinza-claro); padding: 24px 12px; border-radius: 14px;
+      text-align: center; transition: all 0.3s;
+      border-bottom: 4px solid transparent;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
-
     .servico-item:hover {
-      background: #ffffff;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-      border-bottom-color: var(--magenta);
-      transform: translateY(-3px);
+      background: white; box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+      border-bottom-color: var(--magenta); transform: translateY(-4px);
     }
-
-    .servico-item span {
-      font-weight: 500;
-      color: var(--preto);
-      font-size: 0.95rem;
-    }
-
-    /* ===== CONTATO ===== */
-    .contato {
-      padding: 70px 0;
-      background: var(--cinza-claro);
-    }
-
+    .servico-item span { font-weight: 500; color: var(--preto); font-size: 1.05rem; }
+    .contato { padding: 80px 0; background: var(--cinza-claro); }
     .contato .section-title {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: var(--preto);
-      margin-bottom: 12px;
+      text-align: center; font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; color: var(--preto); margin-bottom: 8px;
     }
-
     .contato .section-subtitle {
-      text-align: center;
-      color: var(--cinza);
-      font-weight: 300;
-      margin-bottom: 40px;
-      font-size: 1rem;
+      text-align: center; color: var(--cinza); font-weight: 300;
+      font-size: 1.1rem; margin-bottom: 48px;
     }
-
-    .contato-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
+    .contato-wrapper {
+      display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch;
     }
-
+    .contato-info { flex: 1 1 300px; display: flex; flex-direction: column; gap: 24px; }
     .contato-card {
-      background: var(--branco);
-      padding: 28px 32px;
-      border-radius: 12px;
-      min-width: 240px;
-      text-align: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-      border: 1px solid #eaeaea;
-      flex: 1 1 200px;
+      background: white; padding: 28px 24px; border-radius: 16px;
+      box-shadow: var(--sombra); border: 1px solid #eaeaea;
+      transition: transform 0.3s;
     }
-
-    .contato-card h3 {
-      color: var(--preto);
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
+    .contato-card:hover { transform: translateY(-4px); }
+    .contato-card .icon { font-size: 28px; margin-bottom: 8px; display: block; }
+    .contato-card h3 { font-size: 1.1rem; font-weight: 600; color: var(--preto); margin-bottom: 6px; }
+    .contato-card p { color: var(--cinza); font-size: 1rem; line-height: 1.6; }
+    .contato-card a { color: var(--preto); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    .contato-card a:hover { color: var(--magenta); }
+    .contato-mapa {
+      flex: 1 1 400px; border-radius: 16px; overflow: hidden;
+      box-shadow: var(--sombra); border: 1px solid #eaeaea;
+      background: white; min-height: 300px;
     }
-
-    .contato-card p {
-      color: var(--cinza);
-      font-size: 0.95rem;
+    .contato-mapa iframe {
+      width: 100%; height: 100%; min-height: 300px; border: 0; display: block;
     }
-
-    .contato-card a {
-      color: var(--preto);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .contato-card a:hover {
-      color: var(--magenta);
-    }
-
-    .endereco {
-      margin-top: 32px;
-      text-align: center;
-      font-size: 1rem;
-      background: var(--branco);
-      padding: 20px 24px;
-      border-radius: 12px;
-      border-left: 4px solid var(--laranja);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      color: var(--cinza);
-    }
-
-    .endereco strong {
-      color: var(--preto);
-    }
-
-    /* ===== REDES SOCIAIS ===== */
-    .redes {
-      padding: 50px 0;
-      background: var(--branco);
-      text-align: center;
-    }
-
-    .redes h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: var(--preto);
-      margin-bottom: 8px;
-    }
-
-    .redes p {
-      color: var(--cinza);
-      font-weight: 300;
-      margin-bottom: 28px;
-    }
-
-    .redes-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
+    .redes { padding: 60px 0; background: white; text-align: center; }
+    .redes h3 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--preto); margin-bottom: 6px; }
+    .redes p { color: var(--cinza); font-weight: 300; margin-bottom: 32px; }
+    .redes-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
     .redes-links a {
-      background: var(--cinza-claro);
-      padding: 10px 24px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: var(--preto);
-      transition: all 0.3s;
-      border: 1px solid transparent;
+      background: var(--cinza-claro); padding: 12px 30px; border-radius: 50px;
+      text-decoration: none; font-weight: 500; font-size: 0.95rem;
+      color: var(--preto); transition: all 0.3s; border: 1px solid transparent;
     }
-
     .redes-links a:hover {
-      background: var(--magenta);
-      color: var(--branco);
-      border-color: var(--magenta);
-      transform: scale(1.02);
+      background: var(--magenta); color: white; border-color: var(--magenta);
+      transform: scale(1.04);
     }
-
-    /* ===== PROJETO SOCIAL ===== */
     .projeto-social {
-      text-align: center;
-      padding: 40px 0 50px;
-      background: var(--cinza-claro);
+      text-align: center; padding: 48px 0 56px; background: var(--cinza-claro);
     }
-
     .projeto-social .btn-social {
-      background: transparent;
-      color: var(--laranja);
-      padding: 10px 28px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      display: inline-block;
-      border: 1.5px solid var(--laranja);
-      transition: all 0.3s;
+      background: transparent; color: var(--laranja);
+      padding: 12px 34px; border-radius: 50px; text-decoration: none;
+      font-weight: 500; font-size: 1rem; display: inline-block;
+      border: 2px solid var(--laranja); transition: all 0.3s;
     }
-
     .projeto-social .btn-social:hover {
-      background: var(--laranja);
-      color: var(--branco);
-      transform: scale(1.02);
+      background: var(--laranja); color: white; transform: scale(1.04);
     }
-
-    /* ===== RODAPÉ ===== */
     footer {
-      background: var(--preto);
-      color: #aaaaaa;
-      text-align: center;
-      padding: 28px 0;
-      font-size: 0.9rem;
+      background: var(--preto); color: #aaaaaa; text-align: center;
+      padding: 32px 0; font-size: 0.95rem;
     }
-
-    footer a {
-      color: var(--laranja);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    footer .footer-divider {
-      color: #444;
-      margin: 0 8px;
-    }
-
-    /* ===== RESPONSIVO ===== */
+    footer a { color: var(--laranja); text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
+    footer .footer-divider { color: #444; margin: 0 10px; }
     @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        text-align: center;
-      }
-      .logo-area {
-        flex-direction: column;
-      }
-      .hero h2 {
-        font-size: 2rem;
-      }
-      .hero .slogan {
-        font-size: 1rem;
-      }
-      .servicos-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .contato-info {
-        flex-direction: column;
-        align-items: center;
-      }
-      .logo-area h1 {
-        font-size: 1.5rem;
-      }
+      .hero .arte-destaque { max-height: 200px; }
+      .hero h2 { font-size: 2.2rem; }
+      .hero .slogan { font-size: 1rem; }
+      .servicos-grid { grid-template-columns: repeat(2, 1fr); }
+      .contato-wrapper { flex-direction: column; }
+      .contato-mapa { min-height: 250px; }
+      .whatsapp-float { width: 52px; height: 52px; bottom: 20px; right: 20px; }
+      .whatsapp-float svg { width: 28px; height: 28px; }
     }
-
     @media (max-width: 480px) {
-      .servicos-grid {
-        grid-template-columns: 1fr;
-      }
-      .btn-whatsapp-header {
-        width: 100%;
-        text-align: center;
-      }
+      .hero .arte-destaque { max-height: 150px; }
+      .servicos-grid { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 1.8rem; }
+      .hero .btn-agendar { padding: 14px 36px; font-size: 1rem; }
     }
   </style>
 </head>
 <body>
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5567992711702" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M12.032 21.964c-1.886 0-3.742-0.497-5.35-1.438l-0.072-0.042-4.54 1.488 1.488-4.426-0.046-0.074c-1.004-1.668-1.536-3.58-1.536-5.552 0-5.928 4.822-10.75 10.75-10.75s10.75 4.822 10.75 10.75-4.822 10.75-10.75 10.75zM12.032 3.214c-4.662 0-8.45 3.788-8.45 8.45 0 1.678 0.496 3.31 1.436 4.682l0.052 0.076-0.944 2.81 2.9-0.948 0.078 0.048c1.33 0.828 2.91 1.272 4.586 1.272 4.662 0 8.45-3.788 8.45-8.45s-3.788-8.45-8.45-8.45zM15.054 13.722c-0.188-0.094-1.114-0.55-1.286-0.612s-0.298-0.094-0.424 0.094-0.488 0.612-0.598 0.738c-0.11 0.126-0.22 0.142-0.408 0.048-0.188-0.094-0.794-0.292-1.512-0.932-0.558-0.496-0.936-1.11-1.046-1.298-0.11-0.188-0.012-0.29 0.082-0.384 0.084-0.084 0.188-0.22 0.282-0.33 0.094-0.11 0.126-0.188 0.188-0.314 0.062-0.126 0.032-0.236-0.016-0.33-0.048-0.094-0.424-1.02-0.58-1.396-0.152-0.366-0.306-0.316-0.424-0.322-0.11-0.006-0.236-0.008-0.362-0.008s-0.33 0.048-0.502 0.236c-0.172 0.188-0.656 0.642-0.656 1.566s0.672 1.816 0.766 1.942c0.094 0.126 1.322 2.016 3.202 2.826 0.448 0.192 0.798 0.306 1.072 0.392 0.45 0.144 0.858 0.124 1.182 0.076 0.36-0.054 1.114-0.456 1.27-0.896 0.156-0.44 0.156-0.816 0.11-0.894-0.046-0.078-0.17-0.126-0.358-0.22z"/>
+    </svg>
+  </a>
 
-  <!-- ========== HEADER ========== -->
-  <header>
-    <div class="container header-content">
-      <div class="logo-area">
-        <img src="wendy.png" alt="Logo Wendy Wafay" />
-        <div>
-          <h1>Wendy Wafay</h1>
-          <div class="subtitle">GLAMOUR Y STYLO</div>
-        </div>
-      </div>
-      <a href="https://wa.me/5567992711702" target="_blank" class="btn-whatsapp-header">
-        Agendar Horário
-      </a>
-    </div>
-  </header>
-
-  <!-- ========== HERO ========== -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
+      <img src="wendy.png" alt="Wendy Wafay – GLAMOUR Y STYLO" class="arte-destaque" />
       <h2>Beleza que transforma,<br />cuidado que acolhe</h2>
       <p class="slogan">Especialistas em cuidados capilares, unhas, cílios e muito mais.</p>
-      <a href="https://wa.me/5567992711702" target="_blank" class="btn-agendar">
-        Agendar Horário
-      </a>
+      <a href="https://wa.me/5567992711702" target="_blank" class="btn-agendar">Agendar Horário</a>
     </div>
   </section>
 
-  <!-- ========== SERVIÇOS ========== -->
+  <!-- SERVIÇOS -->
   <section class="servicos">
     <div class="container">
       <h2 class="section-title">Nossos Serviços</h2>
-      <p class="section-subtitle">O que a Wendy Wafay oferece para realçar sua beleza</p>
+      <p class="section-subtitle">Tudo para realçar a sua beleza</p>
       <div class="servicos-grid">
         <div class="servico-item"><span>Manicure</span></div>
         <div class="servico-item"><span>Pedicure</span></div>
@@ -458,30 +201,52 @@
     </div>
   </section>
 
-  <!-- ========== CONTATO ========== -->
+  <!-- CONTATO -->
   <section class="contato">
     <div class="container">
       <h2 class="section-title">Contato</h2>
-      <p class="section-subtitle">Entre em contato e agende seu horário</p>
-      <div class="contato-info">
-        <div class="contato-card">
-          <h3>Telefone</h3>
-          <p><a href="https://wa.me/5567992711702" target="_blank">(67) 99271-1702</a></p>
-          <p><a href="https://wa.me/5567981719414" target="_blank">(67) 98171-9414</a></p>
+      <p class="section-subtitle">Venha nos conhecer ou agende pelo WhatsApp</p>
+      <div class="contato-wrapper">
+        <div class="contato-info">
+          <div class="contato-card">
+            <span class="icon">📞</span>
+            <h3>Telefone</h3>
+            <p>
+              <a href="https://wa.me/5567992711702" target="_blank">(67) 99271-1702</a><br />
+              <a href="https://wa.me/5567981719414" target="_blank">(67) 98171-9414</a>
+            </p>
+          </div>
+          <div class="contato-card">
+            <span class="icon">📍</span>
+            <h3>Endereço</h3>
+            <p>
+              Av. Calogeras, 2075 - Centro<br />
+              Campo Grande - MS<br />
+              <span style="font-size:0.9rem; color:var(--cinza);">(ao lado da Livraria Betel)</span>
+            </p>
+          </div>
+          <div class="contato-card" style="background: var(--magenta); color: white; border: none;">
+            <span class="icon">💬</span>
+            <h3 style="color: white;">Atendimento rápido</h3>
+            <p style="color: rgba(255,255,255,0.85);">
+              Fale conosco pelo WhatsApp e agende seu horário.
+            </p>
+            <a href="https://wa.me/5567992711702" target="_blank" style="display:inline-block; margin-top:12px; background: white; color: var(--magenta); padding: 8px 28px; border-radius: 40px; font-weight: 600; text-decoration: none;">
+              Chamar agora
+            </a>
+          </div>
         </div>
-        <div class="contato-card">
-          <h3>Endereço</h3>
-          <p>Av. Calogeras, 2075 - Centro<br />Campo Grande - MS</p>
-          <p style="font-size:0.85rem; color:var(--cinza); margin-top:4px;">ao lado da Livraria Betel</p>
+        <div class="contato-mapa">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.6874!2d-54.642276!3d-20.465310!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e67acd9cfd6b%3A0x2c5f2e8c5b5b1f3a!2sAv.%20Calogeras%2C%202075%20-%20Centro%2C%20Campo%20Grande%20-%20MS%2C%2079002-130!5e0!3m2!1spt-BR!2sbr!4v1689559321769"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
-      </div>
-      <div class="endereco">
-        <strong>Salão Wendy Wafay</strong> – Campo Grande, MS
       </div>
     </div>
   </section>
 
-  <!-- ========== REDES SOCIAIS ========== -->
+  <!-- REDES SOCIAIS -->
   <section class="redes">
     <div class="container">
       <h3>Redes Sociais</h3>
@@ -495,7 +260,7 @@
     </div>
   </section>
 
-  <!-- ========== PROJETO SOCIAL ========== -->
+  <!-- PROJETO SOCIAL -->
   <section class="projeto-social">
     <div class="container">
       <a href="https://manantialdevalores.org/" target="_blank" class="btn-social">
@@ -504,7 +269,7 @@
     </div>
   </section>
 
-  <!-- ========== RODAPÉ ========== -->
+  <!-- RODAPÉ -->
   <footer>
     <div class="container">
       <p>
@@ -514,6 +279,5 @@
       </p>
     </div>
   </footer>
-
 </body>
 </html>
