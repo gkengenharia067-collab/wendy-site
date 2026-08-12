@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wendy Wafay – GLAMOUR Y STYLO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== CORES DA MARCA ===== */
+    :root {
+      --laranja: #F7931E;
+      --amarelo: #FFD54F;
+      --rosa: #F06292;
+      --magenta: #D81B60;
+      --preto: #000000;
+      --cinza: #757575;
+      --branco: #ffffff;
+      --cinza-claro: #f5f5f5;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--branco);
+      padding: 18px 0;
+      border-bottom: 2px solid var(--laranja);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-area img {
+      height: 70px;
+      width: auto;
+      border-radius: 6px;
+    }
+
+    .logo-area h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--preto);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-area .subtitle {
+      font-size: 0.9rem;
+      color: var(--cinza);
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .btn-whatsapp-header {
+      background: var(--magenta);
+      color: var(--branco);
+      padding: 10px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-whatsapp-header:hover {
+      background: #b71550;
+      transform: scale(1.02);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #faf3ed 0%, #ffffff 100%);
+      padding: 70px 0 60px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--preto);
+      margin-bottom: 12px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero .slogan {
+      font-size: 1.2rem;
+      color: var(--cinza);
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .hero .btn-agendar {
+      background: var(--magenta);
+      color: var(--branco);
+      padding: 14px 44px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.2s;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero .btn-agendar:hover {
+      background: #b71550;
+      transform: scale(1.03);
+    }
+
+    /* ===== SERVIÇOS ===== */
+    .servicos {
+      padding: 70px 0;
+      background: var(--branco);
+    }
+
+    .servicos .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--preto);
+      margin-bottom: 12px;
+    }
+
+    .servicos .section-subtitle {
+      text-align: center;
+      color: var(--cinza);
+      font-weight: 300;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+
+    .servico-item {
+      background: var(--cinza-claro);
+      padding: 20px 12px;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.3s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .servico-item:hover {
+      background: #ffffff;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      border-bottom-color: var(--magenta);
+      transform: translateY(-3px);
+    }
+
+    .servico-item span {
+      font-weight: 500;
+      color: var(--preto);
+      font-size: 0.95rem;
+    }
+
+    /* ===== CONTATO ===== */
+    .contato {
+      padding: 70px 0;
+      background: var(--cinza-claro);
+    }
+
+    .contato .section-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--preto);
+      margin-bottom: 12px;
+    }
+
+    .contato .section-subtitle {
+      text-align: center;
+      color: var(--cinza);
+      font-weight: 300;
+      margin-bottom: 40px;
+      font-size: 1rem;
+    }
+
+    .contato-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .contato-card {
+      background: var(--branco);
+      padding: 28px 32px;
+      border-radius: 12px;
+      min-width: 240px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      border: 1px solid #eaeaea;
+      flex: 1 1 200px;
+    }
+
+    .contato-card h3 {
+      color: var(--preto);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .contato-card p {
+      color: var(--cinza);
+      font-size: 0.95rem;
+    }
+
+    .contato-card a {
+      color: var(--preto);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .contato-card a:hover {
+      color: var(--magenta);
+    }
+
+    .endereco {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 1rem;
+      background: var(--branco);
+      padding: 20px 24px;
+      border-radius: 12px;
+      border-left: 4px solid var(--laranja);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      color: var(--cinza);
+    }
+
+    .endereco strong {
+      color: var(--preto);
+    }
+
+    /* ===== REDES SOCIAIS ===== */
+    .redes {
+      padding: 50px 0;
+      background: var(--branco);
+      text-align: center;
+    }
+
+    .redes h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--preto);
+      margin-bottom: 8px;
+    }
+
+    .redes p {
+      color: var(--cinza);
+      font-weight: 300;
+      margin-bottom: 28px;
+    }
+
+    .redes-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .redes-links a {
+      background: var(--cinza-claro);
+      padding: 10px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--preto);
+      transition: all 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .redes-links a:hover {
+      background: var(--magenta);
+      color: var(--branco);
+      border-color: var(--magenta);
+      transform: scale(1.02);
+    }
+
+    /* ===== PROJETO SOCIAL ===== */
+    .projeto-social {
+      text-align: center;
+      padding: 40px 0 50px;
+      background: var(--cinza-claro);
+    }
+
+    .projeto-social .btn-social {
+      background: transparent;
+      color: var(--laranja);
+      padding: 10px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      display: inline-block;
+      border: 1.5px solid var(--laranja);
+      transition: all 0.3s;
+    }
+
+    .projeto-social .btn-social:hover {
+      background: var(--laranja);
+      color: var(--branco);
+      transform: scale(1.02);
+    }
+
+    /* ===== RODAPÉ ===== */
+    footer {
+      background: var(--preto);
+      color: #aaaaaa;
+      text-align: center;
+      padding: 28px 0;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--laranja);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer .footer-divider {
+      color: #444;
+      margin: 0 8px;
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .logo-area {
+        flex-direction: column;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero .slogan {
+        font-size: 1rem;
+      }
+      .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contato-info {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo-area h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .servicos-grid {
+        grid-template-columns: 1fr;
+      }
+      .btn-whatsapp-header {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="container header-content">
+      <div class="logo-area">
+        <img src="wendy.png" alt="Logo Wendy Wafay" />
+        <div>
+          <h1>Wendy Wafay</h1>
+          <div class="subtitle">GLAMOUR Y STYLO</div>
+        </div>
+      </div>
+      <a href="https://wa.me/5567992711702" target="_blank" class="btn-whatsapp-header">
+        Agendar Horário
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <h2>Beleza que transforma,<br />cuidado que acolhe</h2>
+      <p class="slogan">Especialistas em cuidados capilares, unhas, cílios e muito mais.</p>
+      <a href="https://wa.me/5567992711702" target="_blank" class="btn-agendar">
+        Agendar Horário
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== SERVIÇOS ========== -->
+  <section class="servicos">
+    <div class="container">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <p class="section-subtitle">O que a Wendy Wafay oferece para realçar sua beleza</p>
+      <div class="servicos-grid">
+        <div class="servico-item"><span>Manicure</span></div>
+        <div class="servico-item"><span>Pedicure</span></div>
+        <div class="servico-item"><span>Alongamento de Unhas</span></div>
+        <div class="servico-item"><span>Alongamento de Cílios</span></div>
+        <div class="servico-item"><span>Cortes Feminino</span></div>
+        <div class="servico-item"><span>Cortes Masculino</span></div>
+        <div class="servico-item"><span>Escova</span></div>
+        <div class="servico-item"><span>Hidratação Capilar</span></div>
+        <div class="servico-item"><span>Sobrancelha</span></div>
+        <div class="servico-item"><span>Depilação</span></div>
+        <div class="servico-item"><span>Luzes</span></div>
+        <div class="servico-item"><span>Mechas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTATO ========== -->
+  <section class="contato">
+    <div class="container">
+      <h2 class="section-title">Contato</h2>
+      <p class="section-subtitle">Entre em contato e agende seu horário</p>
+      <div class="contato-info">
+        <div class="contato-card">
+          <h3>Telefone</h3>
+          <p><a href="https://wa.me/5567992711702" target="_blank">(67) 99271-1702</a></p>
+          <p><a href="https://wa.me/5567981719414" target="_blank">(67) 98171-9414</a></p>
+        </div>
+        <div class="contato-card">
+          <h3>Endereço</h3>
+          <p>Av. Calogeras, 2075 - Centro<br />Campo Grande - MS</p>
+          <p style="font-size:0.85rem; color:var(--cinza); margin-top:4px;">ao lado da Livraria Betel</p>
+        </div>
+      </div>
+      <div class="endereco">
+        <strong>Salão Wendy Wafay</strong> – Campo Grande, MS
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REDES SOCIAIS ========== -->
+  <section class="redes">
+    <div class="container">
+      <h3>Redes Sociais</h3>
+      <p>Acompanhe o trabalho da Wendy</p>
+      <div class="redes-links">
+        <a href="https://instagram.com/wendy_wafay" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=100013066958137" target="_blank">Facebook</a>
+        <a href="https://www.youtube.com/@WendyWafay2023" target="_blank">YouTube</a>
+        <a href="https://tiktok.com/@wendywafay" target="_blank">TikTok</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJETO SOCIAL ========== -->
+  <section class="projeto-social">
+    <div class="container">
+      <a href="https://manantialdevalores.org/" target="_blank" class="btn-social">
+        Conheça nosso projeto social
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== RODAPÉ ========== -->
+  <footer>
+    <div class="container">
+      <p>
+        &copy; 2026 Wendy Wafay Salão de Beleza
+        <span class="footer-divider">|</span>
+        criado por <a href="https://wa.me/5567999222720" target="_blank">Gabriel</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
