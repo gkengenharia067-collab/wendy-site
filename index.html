@@ -9,8 +9,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #e8e4e1; /* TEMPORÁRIO – me diga a cor que você quer */
-      color: #1a1a1a;
+      background: #2c2c30; /* fundo escuro dramático */
+      color: #f0f0f0;
       line-height: 1.6;
     }
     .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
@@ -21,10 +21,10 @@
       --rosa: #F06292;
       --magenta: #D81B60;
       --preto: #000000;
-      --cinza: #666666;
+      --cinza: #b0b0b0;
       --branco: #ffffff;
-      --cinza-claro: #f0ece8;
-      --sombra: 0 12px 40px rgba(0,0,0,0.04);
+      --cinza-claro: #3a3a3e;
+      --sombra: 0 12px 40px rgba(0,0,0,0.6);
     }
 
     /* BOTÃO FLUTUANTE WHATSAPP */
@@ -40,7 +40,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 24px rgba(37,211,102,0.3);
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
       z-index: 999;
       text-decoration: none;
       transition: transform 0.3s;
@@ -62,7 +62,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.2) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
       pointer-events: none;
     }
 
@@ -70,13 +70,13 @@
     .apresentacao {
       padding: 60px 0 50px;
       text-align: center;
-      background: var(--branco);
-      border-top: 1px solid rgba(0,0,0,0.03);
+      background: #222226;
+      border-top: 1px solid rgba(255,255,255,0.04);
     }
     .apresentacao h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3.2rem;
-      color: var(--preto);
+      color: var(--branco);
       margin-bottom: 8px;
       font-weight: 700;
       letter-spacing: -0.5px;
@@ -97,27 +97,27 @@
       text-decoration: none;
       color: white;
       background: linear-gradient(135deg, var(--magenta) 0%, var(--rosa) 100%);
-      box-shadow: 0 6px 24px rgba(216,27,96,0.25);
+      box-shadow: 0 6px 24px rgba(216,27,96,0.4);
       transition: all 0.3s;
       border: none;
       cursor: pointer;
     }
     .apresentacao .btn-agendar:hover {
       transform: scale(1.04);
-      box-shadow: 0 8px 32px rgba(216,27,96,0.35);
+      box-shadow: 0 8px 32px rgba(216,27,96,0.6);
       background: linear-gradient(135deg, var(--laranja) 0%, var(--magenta) 100%);
     }
 
     /* SERVIÇOS */
     .servicos {
       padding: 80px 0;
-      background: #f5f2ef;
+      background: #1e1e22;
     }
     .servicos .section-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
       font-size: 2.6rem;
-      color: var(--preto);
+      color: var(--branco);
       margin-bottom: 8px;
     }
     .servicos .section-subtitle {
@@ -133,36 +133,36 @@
       gap: 18px;
     }
     .servico-item {
-      background: var(--branco);
+      background: var(--cinza-claro);
       padding: 24px 12px;
       border-radius: 14px;
       text-align: center;
       transition: all 0.3s;
       border-bottom: 4px solid var(--amarelo);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     .servico-item:hover {
-      background: #fff;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+      background: #4a4a4e;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.4);
       border-bottom-color: var(--magenta);
       transform: translateY(-4px);
     }
     .servico-item span {
       font-weight: 500;
-      color: var(--preto);
+      color: var(--branco);
       font-size: 1.05rem;
     }
 
     /* CONTATO / MAPA */
     .contato {
       padding: 80px 0;
-      background: var(--branco);
+      background: #222226;
     }
     .contato .section-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
       font-size: 2.6rem;
-      color: var(--preto);
+      color: var(--branco);
       margin-bottom: 8px;
     }
     .contato .section-subtitle {
@@ -176,8 +176,8 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: var(--sombra);
-      border: 1px solid #eaeaea;
-      background: white;
+      border: 1px solid #333;
+      background: #222;
       min-height: 350px;
     }
     .contato-mapa iframe {
@@ -199,25 +199,25 @@
       font-size: 1.1rem;
       background: linear-gradient(135deg, var(--laranja) 0%, var(--rosa) 100%);
       color: white;
-      box-shadow: 0 6px 24px rgba(247,147,30,0.2);
+      box-shadow: 0 6px 24px rgba(247,147,30,0.3);
       transition: all 0.3s;
     }
     .contato .btn-whatsapp-central:hover {
       transform: scale(1.04);
-      box-shadow: 0 8px 32px rgba(247,147,30,0.3);
+      box-shadow: 0 8px 32px rgba(247,147,30,0.5);
       background: linear-gradient(135deg, var(--magenta) 0%, var(--laranja) 100%);
     }
 
     /* REDES SOCIAIS */
     .redes {
       padding: 60px 0;
-      background: #f5f2ef;
+      background: #1e1e22;
       text-align: center;
     }
     .redes h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
-      color: var(--preto);
+      color: var(--branco);
       margin-bottom: 6px;
     }
     .redes p {
@@ -240,12 +240,12 @@
       border-radius: 50%;
       text-decoration: none;
       transition: transform 0.3s, box-shadow 0.3s;
-      background: var(--branco);
-      border: 1.5px solid #dce1e8;
+      background: var(--cinza-claro);
+      border: 1.5px solid #444;
     }
     .redes-links a:hover {
       transform: scale(1.10);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
     }
     .redes-links a svg {
       width: 28px;
@@ -256,8 +256,6 @@
     .redes-links .ig svg { fill: none; stroke: #E4405F; stroke-width: 1.8; }
     .redes-links .fb svg { fill: none; stroke: #1877F2; stroke-width: 1.8; }
     .redes-links .yt svg { fill: none; stroke: #FF0000; stroke-width: 1.8; }
-
-    /* TIKTOK CORRIGIDO (ícone oficial) */
     .redes-links .tt svg {
       fill: none;
       stroke: #010101;
@@ -266,16 +264,16 @@
       stroke-linejoin: round;
     }
 
-    .redes-links .ig:hover { border-color: #E4405F; background: rgba(228,64,95,0.04); }
-    .redes-links .fb:hover { border-color: #1877F2; background: rgba(24,119,242,0.04); }
-    .redes-links .yt:hover { border-color: #FF0000; background: rgba(255,0,0,0.04); }
-    .redes-links .tt:hover { border-color: #010101; background: rgba(0,0,0,0.02); }
+    .redes-links .ig:hover { border-color: #E4405F; background: rgba(228,64,95,0.15); }
+    .redes-links .fb:hover { border-color: #1877F2; background: rgba(24,119,242,0.15); }
+    .redes-links .yt:hover { border-color: #FF0000; background: rgba(255,0,0,0.15); }
+    .redes-links .tt:hover { border-color: #010101; background: rgba(0,0,0,0.2); }
 
     /* PROJETO SOCIAL */
     .projeto-social {
       text-align: center;
       padding: 48px 0 56px;
-      background: var(--branco);
+      background: #222226;
     }
     .projeto-social .btn-social {
       background: transparent;
@@ -297,8 +295,8 @@
 
     /* RODAPÉ */
     footer {
-      background: var(--preto);
-      color: #aaaaaa;
+      background: #141418;
+      color: #666;
       text-align: center;
       padding: 32px 0;
       font-size: 0.95rem;
@@ -312,7 +310,7 @@
       text-decoration: underline;
     }
     footer .footer-divider {
-      color: #444;
+      color: #333;
       margin: 0 10px;
     }
 
