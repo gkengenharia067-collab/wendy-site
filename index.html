@@ -9,23 +9,23 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #ffffff;
-      color: #1a1a1a;
+      background: #0d0d0d; /* fundo escuro sofisticado */
+      color: #f0f0f0;
       line-height: 1.6;
     }
     .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-    /* ===== PALETA DE CORES (EXATAMENTE A QUE VOCÊ PASSOU) ===== */
+    /* ===== PALETA DE CORES ===== */
     :root {
       --laranja: #F7931E;
       --amarelo: #FFD54F;
       --rosa: #F06292;
       --magenta: #D81B60;
       --preto: #000000;
-      --cinza: #757575;
+      --cinza: #aaaaaa;
       --branco: #ffffff;
-      --cinza-claro: #f5f2ef;
-      --sombra: 0 12px 40px rgba(0,0,0,0.06);
+      --cinza-claro: #2a2a2a;
+      --sombra: 0 12px 40px rgba(0,0,0,0.6);
     }
 
     /* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
@@ -49,7 +49,7 @@
     .whatsapp-float:hover { transform: scale(1.08); }
     .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
 
-    /* ===== CAPA COM OVERLAY ===== */
+    /* ===== CAPA ===== */
     .capa {
       height: 100vh;
       background: url('wendy.png') no-repeat center center / cover;
@@ -63,7 +63,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.30) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
       pointer-events: none;
     }
 
@@ -71,13 +71,13 @@
     .apresentacao {
       padding: 60px 0 50px;
       text-align: center;
-      background: var(--branco);
-      border-top: 1px solid rgba(0,0,0,0.04);
+      background: #121212;
+      border-top: 1px solid rgba(255,255,255,0.04);
     }
     .apresentacao h1 {
       font-family: 'Playfair Display', serif;
       font-size: 3.2rem;
-      color: var(--preto);
+      color: var(--branco);
       margin-bottom: 8px;
       font-weight: 700;
       letter-spacing: -0.5px;
@@ -97,28 +97,28 @@
       font-size: 1.1rem;
       text-decoration: none;
       color: white;
-      background: var(--magenta);
-      box-shadow: 0 6px 24px rgba(216,27,96,0.35);
+      background: linear-gradient(135deg, var(--magenta) 0%, var(--rosa) 100%);
+      box-shadow: 0 6px 24px rgba(216,27,96,0.4);
       transition: all 0.3s;
       border: none;
       cursor: pointer;
     }
     .apresentacao .btn-agendar:hover {
       transform: scale(1.04);
-      box-shadow: 0 8px 32px rgba(216,27,96,0.5);
-      background: var(--laranja);
+      box-shadow: 0 8px 32px rgba(216,27,96,0.6);
+      background: linear-gradient(135deg, var(--laranja) 0%, var(--magenta) 100%);
     }
 
     /* ===== SERVIÇOS ===== */
     .servicos {
       padding: 80px 0;
-      background: var(--cinza-claro);
+      background: #1a1a1a;
     }
     .servicos .section-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
       font-size: 2.6rem;
-      color: var(--preto);
+      color: var(--branco);
       margin-bottom: 8px;
     }
     .servicos .section-subtitle {
@@ -134,36 +134,36 @@
       gap: 18px;
     }
     .servico-item {
-      background: var(--branco);
+      background: #2a2a2a;
       padding: 24px 12px;
       border-radius: 14px;
       text-align: center;
       transition: all 0.3s;
       border-bottom: 4px solid var(--amarelo);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     .servico-item:hover {
-      background: white;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+      background: #333;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.4);
       border-bottom-color: var(--magenta);
       transform: translateY(-4px);
     }
     .servico-item span {
       font-weight: 500;
-      color: var(--preto);
+      color: var(--branco);
       font-size: 1.05rem;
     }
 
     /* ===== CONTATO / MAPA ===== */
     .contato {
       padding: 80px 0;
-      background: var(--branco);
+      background: #121212;
     }
     .contato .section-title {
       text-align: center;
       font-family: 'Playfair Display', serif;
       font-size: 2.6rem;
-      color: var(--preto);
+      color: var(--branco);
       margin-bottom: 8px;
     }
     .contato .section-subtitle {
@@ -177,8 +177,8 @@
       border-radius: 16px;
       overflow: hidden;
       box-shadow: var(--sombra);
-      border: 1px solid #eaeaea;
-      background: white;
+      border: 1px solid #333;
+      background: #222;
       min-height: 350px;
     }
     .contato-mapa iframe {
@@ -198,7 +198,7 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
-      background: var(--laranja);
+      background: linear-gradient(135deg, var(--laranja) 0%, var(--rosa) 100%);
       color: white;
       box-shadow: 0 6px 24px rgba(247,147,30,0.3);
       transition: all 0.3s;
@@ -206,19 +206,19 @@
     .contato .btn-whatsapp-central:hover {
       transform: scale(1.04);
       box-shadow: 0 8px 32px rgba(247,147,30,0.5);
-      background: var(--magenta);
+      background: linear-gradient(135deg, var(--magenta) 0%, var(--laranja) 100%);
     }
 
     /* ===== REDES SOCIAIS ===== */
     .redes {
       padding: 60px 0;
-      background: var(--cinza-claro);
+      background: #1a1a1a;
       text-align: center;
     }
     .redes h3 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
-      color: var(--preto);
+      color: var(--branco);
       margin-bottom: 6px;
     }
     .redes p {
@@ -241,36 +241,36 @@
       border-radius: 50%;
       text-decoration: none;
       transition: transform 0.3s, box-shadow 0.3s;
-      background: var(--branco);
-      border: 1.5px solid #dce1e8;
+      background: #2a2a2a;
+      border: 1.5px solid #444;
     }
     .redes-links a:hover {
       transform: scale(1.10);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
     }
     .redes-links a svg {
       width: 28px;
       height: 28px;
     }
 
-    /* Cores das redes (ícone) */
+    /* Cores das redes */
     .redes-links .ig svg { fill: none; stroke: #E4405F; stroke-width: 1.8; }
     .redes-links .fb svg { fill: none; stroke: #1877F2; stroke-width: 1.8; }
     .redes-links .yt svg { fill: none; stroke: #FF0000; stroke-width: 1.8; }
     .redes-links .tt svg { fill: none; stroke: #010101; stroke-width: 1.8; }
-    .redes-links .tw svg { fill: none; stroke: #1DA1F2; stroke-width: 1.8; } /* Twitter */
+    .redes-links .tw svg { fill: none; stroke: #1DA1F2; stroke-width: 1.8; }
 
-    .redes-links .ig:hover { border-color: #E4405F; background: rgba(228,64,95,0.05); }
-    .redes-links .fb:hover { border-color: #1877F2; background: rgba(24,119,242,0.05); }
-    .redes-links .yt:hover { border-color: #FF0000; background: rgba(255,0,0,0.05); }
-    .redes-links .tt:hover { border-color: #010101; background: rgba(0,0,0,0.03); }
-    .redes-links .tw:hover { border-color: #1DA1F2; background: rgba(29,161,242,0.05); }
+    .redes-links .ig:hover { border-color: #E4405F; background: rgba(228,64,95,0.15); }
+    .redes-links .fb:hover { border-color: #1877F2; background: rgba(24,119,242,0.15); }
+    .redes-links .yt:hover { border-color: #FF0000; background: rgba(255,0,0,0.15); }
+    .redes-links .tt:hover { border-color: #010101; background: rgba(0,0,0,0.2); }
+    .redes-links .tw:hover { border-color: #1DA1F2; background: rgba(29,161,242,0.15); }
 
     /* ===== PROJETO SOCIAL ===== */
     .projeto-social {
       text-align: center;
       padding: 48px 0 56px;
-      background: var(--branco);
+      background: #121212;
     }
     .projeto-social .btn-social {
       background: transparent;
@@ -292,8 +292,8 @@
 
     /* ===== RODAPÉ ===== */
     footer {
-      background: var(--preto);
-      color: #aaaaaa;
+      background: #0d0d0d;
+      color: #666;
       text-align: center;
       padding: 32px 0;
       font-size: 0.95rem;
@@ -307,7 +307,7 @@
       text-decoration: underline;
     }
     footer .footer-divider {
-      color: #444;
+      color: #333;
       margin: 0 10px;
     }
 
@@ -329,7 +329,7 @@
 </head>
 <body>
 
-  <!-- ===== BOTÃO FLUTUANTE WHATSAPP (com target _blank) ===== -->
+  <!-- ===== BOTÃO FLUTUANTE WHATSAPP (target _blank) ===== -->
   <a href="https://wa.me/5567992711702?text=Olá%2C%20gostaria%20de%20mais%20informações%20sobre%20os%20serviços." target="_blank" class="whatsapp-float" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24">
       <path d="M12.032 21.964c-1.886 0-3.742-0.497-5.35-1.438l-0.072-0.042-4.54 1.488 1.488-4.426-0.046-0.074c-1.004-1.668-1.536-3.58-1.536-5.552 0-5.928 4.822-10.75 10.75-10.75s10.75 4.822 10.75 10.75-4.822 10.75-10.75 10.75zM12.032 3.214c-4.662 0-8.45 3.788-8.45 8.45 0 1.678 0.496 3.31 1.436 4.682l0.052 0.076-0.944 2.81 2.9-0.948 0.078 0.048c1.33 0.828 2.91 1.272 4.586 1.272 4.662 0 8.45-3.788 8.45-8.45s-3.788-8.45-8.45-8.45zM15.054 13.722c-0.188-0.094-1.114-0.55-1.286-0.612s-0.298-0.094-0.424 0.094-0.488 0.612-0.598 0.738c-0.11 0.126-0.22 0.142-0.408 0.048-0.188-0.094-0.794-0.292-1.512-0.932-0.558-0.496-0.936-1.11-1.046-1.298-0.11-0.188-0.012-0.29 0.082-0.384 0.084-0.084 0.188-0.22 0.282-0.33 0.094-0.11 0.126-0.188 0.188-0.314 0.062-0.126 0.032-0.236-0.016-0.33-0.048-0.094-0.424-1.02-0.58-1.396-0.152-0.366-0.306-0.316-0.424-0.322-0.11-0.006-0.236-0.008-0.362-0.008s-0.33 0.048-0.502 0.236c-0.172 0.188-0.656 0.642-0.656 1.566s0.672 1.816 0.766 1.942c0.094 0.126 1.322 2.016 3.202 2.826 0.448 0.192 0.798 0.306 1.072 0.392 0.45 0.144 0.858 0.124 1.182 0.076 0.36-0.054 1.114-0.456 1.27-0.896 0.156-0.44 0.156-0.816 0.11-0.894-0.046-0.078-0.17-0.126-0.358-0.22z"/>
@@ -422,7 +422,7 @@
             <path d="M12 2v10.5M12 12.5a2.5 2.5 0 1 0 0-5M12 12.5a2.5 2.5 0 1 0 0 5M10 7.5a4 4 0 0 1 4 4v4M10 7.5a4 4 0 0 0-4 4v4" />
           </svg>
         </a>
-        <!-- Twitter (adicionado) -->
+        <!-- Twitter -->
         <a href="https://twitter.com/wendywafay" target="_blank" class="tw" aria-label="Twitter">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
