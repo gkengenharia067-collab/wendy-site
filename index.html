@@ -9,7 +9,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #f8f0ec; /* ÚNICO fundo: rosa suave e elegante */
+      background: #f8f0ec;
       color: #1a1a1a;
       line-height: 1.6;
     }
@@ -49,20 +49,18 @@
 
     /* CAPA */
     .capa {
-  height: 100vh;
-  min-height: 400px; /* garante altura mínima em telas pequenas */
-  background: url('wendy.png') no-repeat center center / cover;
-  position: relative;
-}
-
-/* Remove o fixed em mobile para evitar bugs */
-@media (max-width: 768px) {
-  .capa {
-    background-attachment: scroll;
-    height: 70vh;
-    min-height: 300px;
-  }
-}
+      height: 100vh;
+      min-height: 400px;
+      background: url('wendy.png') no-repeat center center / cover;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .capa {
+        background-attachment: scroll;
+        height: 70vh;
+        min-height: 300px;
+      }
+    }
     .capa::after {
       content: '';
       position: absolute;
@@ -78,7 +76,7 @@
     .apresentacao {
       padding: 60px 0 50px;
       text-align: center;
-      background: transparent; /* fundo igual ao body */
+      background: transparent;
     }
     .apresentacao h1 {
       font-family: 'Playfair Display', serif;
@@ -115,10 +113,10 @@
       background: linear-gradient(135deg, var(--laranja) 0%, var(--magenta) 100%);
     }
 
-    /* SERVIÇOS */
+    /* SERVIÇOS (com links específicos) */
     .servicos {
       padding: 80px 0;
-      background: rgba(255,255,255,0.3); /* leve transparência para dar profundidade, sem faixa */
+      background: rgba(255,255,255,0.3);
     }
     .servicos .section-title {
       text-align: center;
@@ -139,20 +137,27 @@
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 18px;
     }
+    .servico-item-link {
+      text-decoration: none;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .servico-item-link:hover {
+      transform: translateY(-4px);
+    }
     .servico-item {
       background: var(--branco);
       padding: 24px 12px;
       border-radius: 14px;
       text-align: center;
-      transition: all 0.3s;
       border-bottom: 4px solid var(--amarelo);
       box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      transition: all 0.3s;
     }
     .servico-item:hover {
       background: #fff;
       box-shadow: 0 8px 28px rgba(0,0,0,0.06);
       border-bottom-color: var(--magenta);
-      transform: translateY(-4px);
     }
     .servico-item span {
       font-weight: 500;
@@ -163,7 +168,7 @@
     /* CONTATO / MAPA */
     .contato {
       padding: 80px 0;
-      background: transparent; /* fundo igual ao body */
+      background: transparent;
     }
     .contato .section-title {
       text-align: center;
@@ -218,7 +223,7 @@
     /* REDES SOCIAIS */
     .redes {
       padding: 60px 0;
-      background: rgba(255,255,255,0.3); /* leve transparência */
+      background: rgba(255,255,255,0.3);
       text-align: center;
     }
     .redes h3 {
@@ -360,24 +365,60 @@
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
+  <!-- SERVIÇOS (links específicos) -->
   <section class="servicos">
     <div class="container">
       <h2 class="section-title">Nossos Serviços</h2>
       <p class="section-subtitle">Tudo para realçar a sua beleza</p>
       <div class="servicos-grid">
-        <div class="servico-item"><span>Manicure</span></div>
-        <div class="servico-item"><span>Pedicure</span></div>
-        <div class="servico-item"><span>Alongamento de Unhas</span></div>
-        <div class="servico-item"><span>Alongamento de Cílios</span></div>
-        <div class="servico-item"><span>Cortes Feminino</span></div>
-        <div class="servico-item"><span>Cortes Masculino</span></div>
-        <div class="servico-item"><span>Escova</span></div>
-        <div class="servico-item"><span>Hidratação Capilar</span></div>
-        <div class="servico-item"><span>Sobrancelha</span></div>
-        <div class="servico-item"><span>Depilação</span></div>
-        <div class="servico-item"><span>Luzes</span></div>
-        <div class="servico-item"><span>Mechas</span></div>
+        <!-- Manicure -->
+        <a href="https://app-wendy.vercel.app/catalogo/cd31cb7e-29e9-4a60-9db2-7d57be529886" class="servico-item-link">
+          <div class="servico-item"><span>Manicure</span></div>
+        </a>
+        <!-- Pedicure -->
+        <a href="https://app-wendy.vercel.app/catalogo/8b04a784-aeb1-4ebe-82fe-98b809b73b09" class="servico-item-link">
+          <div class="servico-item"><span>Pedicure</span></div>
+        </a>
+        <!-- Alongamento de Unhas -->
+        <a href="https://app-wendy.vercel.app/catalogo/b5868c4c-0649-4b56-9755-d3f03d383a82" class="servico-item-link">
+          <div class="servico-item"><span>Alongamento de Unhas</span></div>
+        </a>
+        <!-- Alongamento de Cílios -->
+        <a href="https://app-wendy.vercel.app/catalogo/f29f2af3-18eb-4365-b0d6-b407ea8f6b9f" class="servico-item-link">
+          <div class="servico-item"><span>Alongamento de Cílios</span></div>
+        </a>
+        <!-- Corte Feminino -->
+        <a href="https://app-wendy.vercel.app/catalogo/614b40ad-ac17-4b79-8746-94cc8e5b3eb6" class="servico-item-link">
+          <div class="servico-item"><span>Cortes Feminino</span></div>
+        </a>
+        <!-- Corte Masculino -->
+        <a href="https://app-wendy.vercel.app/catalogo/c1697e99-013c-467c-a2d6-1eed2e4a45bd" class="servico-item-link">
+          <div class="servico-item"><span>Cortes Masculino</span></div>
+        </a>
+        <!-- Escova -->
+        <a href="https://app-wendy.vercel.app/catalogo/932004c3-6ef8-4abe-9641-7bcd21a2a49a" class="servico-item-link">
+          <div class="servico-item"><span>Escova</span></div>
+        </a>
+        <!-- Hidratação Capilar -->
+        <a href="https://app-wendy.vercel.app/catalogo/89d072b8-68a9-44bf-9ecf-2a13a459c08d" class="servico-item-link">
+          <div class="servico-item"><span>Hidratação Capilar</span></div>
+        </a>
+        <!-- Sobrancelha -->
+        <a href="https://app-wendy.vercel.app/catalogo/3ff1a50b-fd35-4425-9cef-f84937a72b13" class="servico-item-link">
+          <div class="servico-item"><span>Sobrancelha</span></div>
+        </a>
+        <!-- Depilação -->
+        <a href="https://app-wendy.vercel.app/catalogo/d96a8d5e-692f-421a-8e2a-7b6da0e7d059" class="servico-item-link">
+          <div class="servico-item"><span>Depilação</span></div>
+        </a>
+        <!-- Luzes -->
+        <a href="https://app-wendy.vercel.app/catalogo/a092659b-d9dd-4f5e-86d2-7553033fcd45" class="servico-item-link">
+          <div class="servico-item"><span>Luzes</span></div>
+        </a>
+        <!-- Mechas -->
+        <a href="https://app-wendy.vercel.app/catalogo/aeccd445-eecf-41e0-a655-1e68bfd82a4f" class="servico-item-link">
+          <div class="servico-item"><span>Mechas</span></div>
+        </a>
       </div>
     </div>
   </section>
@@ -426,7 +467,7 @@
             <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
           </svg>
         </a>
-        <!-- TikTok com o SVG oficial que você enviou -->
+        <!-- TikTok -->
         <a href="https://tiktok.com/@wendywafay" target="_blank" class="tt" aria-label="TikTok">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
             <path d="M224,74a50.06,50.06,0,0,1-50-50,6,6,0,0,0-6-6H128a6,6,0,0,0-6,6V156a22,22,0,1,1-31.43-19.89A6,6,0,0,0,94,130.69V88a6,6,0,0,0-7-5.91C52.2,88.28,26,120.05,26,156a74,74,0,0,0,148,0V112.93A101.28,101.28,0,0,0,224,126a6,6,0,0,0,6-6V80A6,6,0,0,0,224,74Zm-6,39.8a89.13,89.13,0,0,1-46.5-16.69A6,6,0,0,0,162,102v54a62,62,0,0,1-124,0c0-27.72,18.47-52.48,44-60.38v31.53A34,34,0,1,0,134,156V30h28.29A62.09,62.09,0,0,0,218,85.71Z"/>
